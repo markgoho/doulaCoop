@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.page-footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.8rem;
+	padding: 1em;
+	background-color: $brand-color;
+	color: #FFF;
+
+	@include respond-to(tablet) {
+		flex-direction: row;
+	}
+}
+
+.page-footer--copyright {
+	padding: 0.5em;
+}
+
+.page-footer--contact {
+	padding: 0.5em;
+	border: 2px solid #FFF;
+	border-radius: 5px;
+	color: #FFF;
+
+
+	&:hover {
+		color: $brand-color;
+		background-color: #FFF;
+	}
+}
+

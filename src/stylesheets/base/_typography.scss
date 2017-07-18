@@ -1,0 +1,25 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 100% / 1.4 $text-font-stack;
+}
+
+h1, h2, h3 {
+	font-family: $heading-font-stack;
+}
+
+h1, h2 {
+	font-weight: lighter;
+}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+	color: hsl(0, 0, 100);
+}
+
+h2 {
+	color: $brand-color;
+}

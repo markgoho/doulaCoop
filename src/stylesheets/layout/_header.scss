@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+.page-header {
+	position: relative;
+}
+
+.page-banner {
+	position: relative;
+	// width: calc(100% + 2.5em);
+	// margin-left: -1.25em;
+}
+
+.page-banner--image {
+	min-width: 100%;
+}
+
+.page-banner--heading {
+	padding: 0.25em;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0;
+	right: 0;
+	font-size: 2em;
+	margin-top: 16px;
+	max-width: 70%;
+
+
+	@include respond-to(tablet) {
+		bottom: initial;
+		font-size: 2.5em;
+		max-width: 80%;
+	}
+
+	@include respond-to(desktop) {
+		font-size: 3em;
+		right: 0;
+	}
+}
