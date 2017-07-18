@@ -43,6 +43,14 @@ gulp.task('compileSass', function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task('compressSass', function() {
+  return gulp
+    .src('src/stylesheets/main.scss')
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(autoprefix())
+    .pipe(gulp.dest('src/css'));
+});
+
 gulp.task('pugCompressed', function() {
   return gulp.src('src/templates/*.pug').pipe(pug()).pipe(gulp.dest('src'));
 });
@@ -51,7 +59,7 @@ gulp.task('clean', function() {
   return del(['dist', 'src/css/main.css*', 'src/js/app*.js*']);
 });
 
-gulp.task('deploy', ['clean', 'compileSass', 'pugCompressed'], function() {
+gulp.task('deploy', ['clean', 'compressSass', 'pugCompressed'], function() {
   return gulp
     .src(
       [
