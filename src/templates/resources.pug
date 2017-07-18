@@ -1,0 +1,35 @@
+extends layout.pug
+
+block banner
+    - title = "resources"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='close-up of midwife taking newborn heartrate').page-banner--image
+    h1.page-banner--heading Resources
+
+block main
+    h2 Websites We Trust
+    ul
+        li: a(href="http://www.acog.org/") ACOG - American Congress of Obstetricians and Gynecologists
+        li: a(href="http://www.lamaze.org/") Lamaze for Parents
+        li: a(href="http://www.givingbirthwithconfidence.org/") Giving Birth with Confidence Blog (Lamaze)
+        li: a(href="http://www.dona.org/mothers/faqs_birth.php") DONA International Doula FAQs
+        li: a(href="http://evidencebasedbirth.com/") Evidence Based Birth - Giving Birth Based on Best Advice
+        li: a(href="http://spinningbabies.com/") Spinning Babies - Easier Birth with Fetal Positioning
+        li: a(href="http://www.ican-online.org/") ICAN - International Cesarean Awareness Network
+        li: a(href="http://mana.org/") MANA - Midwives Alliance of North America
+    h3 For up-to-date local resources, visit the 
+        a(href="http://rabn.org/wordpress/resources/") Rochester Area Birth Network's Resources
+        |  webpage.
+
+    h2 Reading List
+    ul
+        li "The Birth Partner" by Penny Simkin
+        li Books by Ina May Gaskin: "Ina May's Guide to Childbirth," "Birth Matters: A Midwife's Manifesta," "Ina May's Guide to Breastfeeding," "Spiritual Midwifery"
+        li "Pregnancy, Childbirth, and the Newborn" by Penny Simkin, April Bolding, Ann Keppler, Janelle Durham, Janet Whalley
+        li "The Thinking Woman's Guide to a Better Birth" by Henci Goer
+        li "Breastfeeding Made Simple" by Kathleen Kendall Tackett

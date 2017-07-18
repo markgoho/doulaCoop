@@ -1,0 +1,35 @@
+extends layout.pug
+
+block banner
+    - title = "how-doulas-help"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='valarie leaning on pole supported by andrew and doula').page-banner--image
+    h1.page-banner--heading How Doulas Help
+
+block main
+    h2 Benefits of a Doula's Presence at Birth
+    h3 Effects on the Mother:
+    ul
+        li Greater satisfaction with her birth experience
+        li More positive assessments of her baby
+        li Less postpartum depression
+    
+    h3 Effects on the Baby:
+    ul
+        li Babies have shorter hospital stays with fewer admissions to special care nurseries
+        li Better mother-infant connection and bonding
+        li Babies breastfeed longer
+    
+    h3 Effects on Birth Outcomes:
+    ul
+        li Shorter labors
+        li Fewer complications
+        li Fewer Cesareans
+        li Less need for Oxytocin
+        li Less need for forceps or vacuum extraction
+        li Less requests for pain medication and epidurals

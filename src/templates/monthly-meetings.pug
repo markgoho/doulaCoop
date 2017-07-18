@@ -1,0 +1,26 @@
+extends layout.pug
+
+block banner
+    - title = "monthly-meetings"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt="julia massaging laura's hips").page-banner--image
+    h1.page-banner--heading Monthly Meetings
+
+block main
+    h2 Monthly Meetings
+    p <strong>When:</strong> 2nd Thursday of each month, 7:00 pm to 9:00 pm
+    p <strong>Where:</strong> Beautiful Birth Choices, 681 Winton Road North, Rochester NY 14609
+    p <strong>Who:</strong> Birth and Postpartum Doulas associated with the Co-Op and anyone interested in becoming or finding out more about the great work that doulas do!
+
+    h3 Training Information
+
+    p The Doula Cooperative supports and participates in DONA International Doula Workshop Trainings twice a year. These workshop are typically held in the Spring and Fall. Patricia Predmore, teaches these Birth Training (DONA) workshops. Postpartum Training (DONA) workshops are taught by Susan Martenson every other year.
+
+    p For information on DONA Birth and Postpartum Doula Workshops in other areas we encourage you to visit 
+        a(href="https://www.dona.org") www.DONA.org
+        | , the official web site of DONA International.

@@ -1,0 +1,21 @@
+extends layout.pug
+
+block banner
+    - title = "what-is-a-doula"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='valarie and client head to head holding hands').page-banner--image
+    h1.page-banner--heading What is a Doula?
+
+block main
+    h2 What is a Doula?
+    h3 Birth Doula
+    p A birth doula is a woman who provides continuous physical, emotional and informational support to the mother before, during and just after childbirth.
+    h3 Postpartum Doula
+    p A postpartum doula helps a family make a smooth transition into parenthood by providing assistance with newborn care, breastfeeding, household duties and valuable emotional support during the postpartum period.
+    h2 What does a doula do?
+    p Doulas are trained in the use of comforting touch, breathing techniques, relaxation, positioning to enhance labor, as well as the anatomy and physiology of the childbirth process. A doula performs NO clinical tasks but does combine her care and wisdom with the skills and knowledge of nurses, midwives and physicians. A doula will also help her client self-advocate and she will support the mother’s partner through the birth process.

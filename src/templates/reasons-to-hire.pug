@@ -1,0 +1,38 @@
+extends layout.pug
+
+block banner
+    - title = "reasons-to-hire"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='julia at bedside of client holding baby').page-banner--image
+    h1.page-banner--heading Reasons to Hire
+
+block main
+    h2 Why do I need a doula?
+    h3 8 Reasons to Hire a Birth Doula
+    ol
+        li This is your first baby
+        li You expect to have a normal birth
+        li Your primary caregiver is a doctor or obstetrician
+        li You anticipate being alone at birth (no partner or family member to attend)
+        li You feel anxious or fearful about your upcoming birth
+        li You believe you may have difficulty coping with pain
+        li You feel that you and your partner will benefit from additional support
+        li You desire a positive birth memory
+    
+    h3 8 Reasons to Hire a Postpartum Doula
+    ol
+        li This is your first baby
+        li You expect to have a cesarean birth
+        li You have several young children at home already and are concerned about their needs
+        li You anticipate being alone after birth (no partner or family member to help at home)
+        li You feel anxious or fearful about early parenthood
+        li You have a strong desire to be successful with breastfeeding or are worried about being successful
+        li You feel that you and your partner will benefit from additional support
+        li You or your family members have a history of postpartum depression
+
+    p Adapted from <em>8 Reasons to Hire a Doula</em> by Michelle Dennill, CD (DONA) &copy; 2008

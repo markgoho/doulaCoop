@@ -1,0 +1,10 @@
+// ----------------------------------------------------------------------------------
+// This file contains all styles related to the main content of the site/application.
+// ----------------------------------------------------------------------------------
+
+.main-container {
+	padding: 0 0.5em;
+	@include respond-to(mobile) {
+		padding: 0 1.5em;
+	}
+}

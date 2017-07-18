@@ -1,0 +1,39 @@
+extends layout.pug
+
+block banner
+    - title = "how-to-join-us"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='group shot of all the coop doulas').page-banner--image
+    h1.page-banner--heading How to Join Us
+
+block main
+    h2 Everyone needs a tribe
+    p The Doula Cooperative of Rochester, NY would love to have you consider becoming a member in support of our work! We meet monthly to encourage each other in our various doula capacities, fellowship together and learn from one another.
+    
+    h3 Levels of membership:
+    ul
+        li Membership as a supporting member: in support of the organization and gaining fellowship and encouragement from other doulas ($15/year level)
+        li Membership as a doula taking referrals: as well as the above ($25/year level)
+
+    h3 What you can expect from membership in the Doula Cooperative:
+    ul
+        li Referrals for Doula Work
+        li Fellowship
+        li The chance to share birth stories
+        li Answers to concerns and questions
+        li Support and friendship from other doulas
+        li Valuable information from guest speakers
+        li Being a part of a growing organization which the birth community is coming to respect
+
+    h3 Guidelines for members:
+    ul
+        li Agree -by signature- to abide by the DONA International Code of Ethics and Standards of Practice
+        li Make every effort to attend the Co-op meetings which are held on the second Thursday of every month
+        li Monitor your email for news and request from members of the Co-op
+        li Update your personal information contained in the referral book whenever there are changes
+        li Communicate with the referral coordinator each month (or more frequently if there are changes) regarding your availability for birth and/or postpartum doula clients

@@ -1,0 +1,26 @@
+extends layout.pug
+
+block banner
+    - title = "steering-committee"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='valarie and doula heads down on bed talking').page-banner--image
+    h1.page-banner--heading Steering Committtee
+
+block main
+    h2 Steering Committee
+    p The Doula Cooperative maintains an active steering committee that consists of the following positions:
+    ul
+        li President, Laura Schwartz
+        li Vice-President, Valarie Welsh
+        li Secretary, Cheryl Johnson
+        li Treasurer, Danielle Major
+        li Co-op Coordinator, Valarie Welsh
+        li Events Coordinator, Nicole Huefner
+        li Education Chair, Nella Goho
+        li Community Liaison, Julia Sittig
+        li Technology Coordinator, Rachel Healey

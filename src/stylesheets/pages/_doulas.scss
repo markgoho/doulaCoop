@@ -1,0 +1,97 @@
+.doula-container {
+    display: flex;
+    flex-direction: column;   
+}
+
+.doula {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    border-bottom: 1px solid grey;
+    flex-direction: row;
+    @include respond-to(mobile) {
+      display: block;
+    }
+}
+
+.doula-headshot {
+  margin-bottom: 0.5em;
+  @include respond-to(mobile) {
+      float: left;
+    }
+}
+
+.doula-info {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doula-bio {
+  flex: 1 1 100%;
+  @include respond-to(tablet) {
+    flex: 1 1 50%;
+  }
+}
+
+.doula-contact {
+  padding-top: 1em;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include respond-to(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.phone,
+.email,
+.website {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5em;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: black;
+  fill: black;
+  margin-right: 0.3em;
+}
+
+.doula a img {
+    width: 50px;
+    height: 70px;
+    margin-right: 1em;
+    @include respond-to(mobile) {
+		width: 100px;
+    height: 140px;
+	}
+    @include respond-to(tablet) {
+		width: 150px;
+    height: 210px;
+	}
+    @include respond-to(desktop) {
+		width: 200px;
+    height: 280px;
+
+	}
+    
+}
+
+.doula-container :last-child {
+    border-bottom: none;
+}
+
+.doula-info > h3 {
+    margin-top: 0;
+}
+

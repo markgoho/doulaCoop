@@ -1,0 +1,16 @@
+extends layout.pug
+
+block banner
+    - title = "for-dads-and-partners"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='valarie on birth ball with husband andrew and doula').page-banner--image
+    h1.page-banner--heading Our Mission
+
+block main
+    h2 Will the doula take place of the partner or husband?
+    p <strong>No.</strong> The doula can actually bring the couple closer. By making sure that the partner’s needs are met (food, drink, and reassurance), the woman and her partner can become closer during the work of labor. The doula’s presence allows the partner to participate at his/her own comfort level.

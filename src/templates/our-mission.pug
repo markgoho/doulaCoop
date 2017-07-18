@@ -1,0 +1,20 @@
+extends layout.pug
+
+block banner
+    - title = "our-mission"
+    picture
+        source(srcset=`img/${title}-banner-desktop-1x.webp, img/${title}-banner-desktop-2x.webp 2x`, media="(min-width: 64em)", type="image/webp")
+        source(srcset=`img/${title}-banner-desktop-1x.jpg, img/${title}-banner-desktop-2x.jpg 2x`, media="(min-width: 64em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-tablet-1x.webp, img/${title}-banner-tablet-2x.webp 2x`, media="(min-width: 48em)", type="image/webp")
+        source(srcset=`img/${title}-banner-tablet-1x.jpg, img/${title}-banner-tablet-2x.jpg 2x`, media="(min-width: 48em)", type="image/jpeg")
+        source(srcset=`img/${title}-banner-mobile-1x.webp, img/${title}-banner-mobile-2x.webp 2x`, type="image/webp")
+        img(srcset=`img/${title}-banner-mobile-1x.jpg, img/${title}-banner-mobile-2x.jpg 2x`, alt='cheryl seeing emelyn for the first time').page-banner--image
+    h1.page-banner--heading Our Mission
+
+block main
+    h2 Supporting Women: Birth and Beyond
+    p The Doula Cooperative proudly bears a dual mission for the Greater Rochester area and surrounding counties:
+    ul
+        li To provide a network for doulas to work together and support one another through fellowship, encouragement, education, and community relations.
+        li To provide a referral network for women and their families to birth and postpartum doulas and other related pregnancy support services.
+    p As professionals working together in the community, members of The Doula Cooperative support and stand by the DONA International Scope of Practice and Code of Ethics for birth and postpartum doulas. Doula practice is evidence-based and backed by research. 
