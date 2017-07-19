@@ -2,7 +2,7 @@
     svg(version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", x="0px", y="0px",
 	 viewBox="0 0 48 48", xml:space="preserve")
         path(fill="#FFF", d="M6,40.3h36v-5.4H6V40.3z M6,26.7h36v-5.4H6V26.7z M6,7.7v5.4h36V7.7H6z")
-nav.mobile-nav
+nav.mobile-nav.hidden
     a(href="/").logo-home-link
         svg(class="coop-logo", data-name="Layer 1", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 294.11 310.23")
             title Doula-Coop-logo
@@ -32,12 +32,12 @@ nav.mobile-nav
     .close-btn &times;
     .mobile-nav--top-level
         a(href="#").mobile-nav--link Welcome
-        .mobile-nav--second-level
+        .mobile-nav--second-level.hidden
             a(href="our-mission").mobile-nav--link Our Mission
             a(href="the-doulas").mobile-nav--link Meet the Doulas                   
     .mobile-nav--top-level
         a(href="#").mobile-nav--link For Parents
-        .mobile-nav--second-level
+        .mobile-nav--second-level.hidden
             a(href='what-is-a-doula').mobile-nav--link What is a Doula?
             a(href='how-doulas-help').mobile-nav--link How Doulas Help
             a(href='reasons-to-hire').mobile-nav--link Reasons to Hire
@@ -45,7 +45,7 @@ nav.mobile-nav
             a(href='resources').mobile-nav--link Resources
     .mobile-nav--top-level
         a(href="#").mobile-nav--link For Doulas
-        .mobile-nav--second-level
+        .mobile-nav--second-level.hidden
             a(href='join-us').mobile-nav--link How to Join
             a(href='monthly-meetings').mobile-nav--link Monthly Meetings
             a(href='steering-committee').mobile-nav--link Steering Committee
