@@ -23,7 +23,7 @@
   // padding-left: 1.25em; /* 3 */
   // padding-right: 1.25em; /* 3 */
   max-width: $max-width; /* 1 */
- }
+}
 
 /**
  * Hide text while making it readable for screen readers
@@ -42,7 +42,7 @@
  * Shamelessly borrowed from HTML5Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
  */
-// .visually-hidden { 
+// .visually-hidden {
 //   border: 0;
 //   clip: rect(0 0 0 0);
 //   height: 1px;
@@ -53,6 +53,6 @@
 //   width: 1px;
 // }
 
-// .hidden {
-//   display: none;
-// }
+.hidden {
+  display: none;
+}

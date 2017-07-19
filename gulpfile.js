@@ -26,9 +26,9 @@ const reload = browserSync.reload;
 // Deploy tasks
 gulp.task('minifyScripts', function() {
   return gulp
-    .src('src/index.js')
+    .src('src/js/index.js')
     .pipe(uglify())
-    .pipe(rename('index.min.js'))
+    .pipe(rename('index.js'))
     .pipe(gulp.dest('src/js'));
 });
 
@@ -59,25 +59,29 @@ gulp.task('clean', function() {
   return del(['dist', 'src/css/main.css*', 'src/js/app*.js*']);
 });
 
-gulp.task('deploy', ['clean', 'compressSass', 'pugCompressed'], function() {
-  return gulp
-    .src(
-      [
-        'src/css/main.css',
-        'src/*.html',
-        'src/js/index.js',
-        'src/img/**',
-        'src/fonts/**'
-      ],
-      {
-        base: './src'
-      }
-    )
-    .pipe(gulp.dest('dist'));
-});
+gulp.task(
+  'deploy',
+  ['clean', 'compressSass', 'pugCompressed', 'minifyScripts'],
+  function() {
+    return gulp
+      .src(
+        [
+          'src/css/main.css',
+          'src/*.html',
+          'src/js/index.js',
+          'src/img/**',
+          'src/fonts/**'
+        ],
+        {
+          base: './src'
+        }
+      )
+      .pipe(gulp.dest('dist'));
+  }
+);
 
 // Watch tasks
-gulp.task('watchJS', ['concatScripts'], function(done) {
+gulp.task('watchJS', function(done) {
   reload();
   done();
 });
@@ -86,14 +90,14 @@ gulp.task('watchPug', function() {
   gulp.watch('src/templates/*.pug', ['pug']);
 });
 
-gulp.task('serve', ['concatScripts', 'compileSass', 'pug'], function() {
+gulp.task('serve', ['compileSass', 'pug'], function() {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './src'
     }
   });
   gulp.watch('stylesheets/**/*.scss', ['compileSass']);
-  gulp.watch('js/main.js', ['watchJS']);
+  gulp.watch('js/index.js', ['watchJS']);
   gulp.watch('src/templates/*.pug', ['pug']);
   gulp.watch('*.html').on('change', reload);
 });

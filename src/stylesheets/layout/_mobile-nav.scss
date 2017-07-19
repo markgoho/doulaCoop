@@ -4,69 +4,67 @@
 
 // Hide mobile nav on desktop
 @include respond-to(desktop) {
-    .mobile-nav {
-        display: none;    
-    }
+  .mobile-nav {
+    display: none;
+  }
 }
 
 .mobile-nav {
-    display: none;
-    height: 100%;
-    position: fixed;
-    width: auto;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color:rgba(0, 0, 0, 0.9);
-    overflow-x: hidden;
-    padding-top: 5em;
-    transition: 0.5s;
+  height: 100%;
+  position: fixed;
+  width: auto;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  padding-top: 5em;
+  transition: 0.5s;
 
-    a {
-        padding: 0.5em 1em 0.5em 2em;
-        text-decoration: none;
-        font-size: 25px;
-        color: #FFF;
-        display: block;
-        transition: 0.3s
-    }
+  a {
+    padding: 0.5em 1em 0.5em 2em;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
 }
 
 .mobile-nav--second-level {
-    display: none;
-    margin-left: 2em;
+  margin-left: 2em;
 }
 
 .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 4em;
-    margin-left: 50px;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 4em;
+  margin-left: 50px;
+  color: white;
+  cursor: pointer;
 }
 
 .coop-logo {
-    width: 2em;
-    fill: #FFF;
-    position: absolute;
-    top: 1em;
-    left: 1.5em;
+  width: 2em;
+  fill: #fff;
+  position: absolute;
+  top: 1em;
+  left: 1.5em;
 }
 
 .show-menu-btn {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 4em;
-    width: 4em;
-    z-index: 1000;
-    top: 1em;
-    left: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    svg {
-        width: 75%;
-    }
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 4em;
+  width: 4em;
+  z-index: 1000;
+  top: 1em;
+  left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 75%;
+  }
 }
