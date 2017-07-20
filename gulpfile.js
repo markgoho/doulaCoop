@@ -10,6 +10,7 @@ const maps = require('gulp-sourcemaps');
 const autoprefix = require('gulp-autoprefixer');
 const del = require('del');
 const pug = require('gulp-pug');
+const wbBuild = require('workbox-build');
 const browserSync = require('browser-sync').create();
 
 const reload = browserSync.reload;
@@ -111,6 +112,22 @@ gulp.task('pug', function() {
       })
     )
     .pipe(gulp.dest('src'));
+});
+
+gulp.task('bundle-sw', () => {
+  return wbBuild
+    .generateSW({
+      globDirectory: './dist/',
+      swDest: './dist/sw.js',
+      globPatterns: ['**/*.{html,js,css,wbp,jpg,png,svg}'],
+      globIgnores: ['admin.html']
+    })
+    .then(() => {
+      console.log('Service worker generated.');
+    })
+    .catch(err => {
+      console.log('[ERROR] This happened: ' + err);
+    });
 });
 
 gulp.task('default', ['deploy']);
