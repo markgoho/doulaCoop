@@ -11,6 +11,7 @@ const autoprefix = require('gulp-autoprefixer');
 const del = require('del');
 const pug = require('gulp-pug');
 const wbBuild = require('workbox-build');
+const critical = require('critical').stream;
 const browserSync = require('browser-sync').create();
 
 const reload = browserSync.reload;
@@ -113,6 +114,32 @@ gulp.task('pug', function() {
       })
     )
     .pipe(gulp.dest('src'));
+});
+
+gulp.task('critical', function() {
+  return gulp
+    .src('dist/*.html')
+    .pipe(
+      critical({
+        base: 'dist/',
+        inline: true,
+        css: ['dist/css/main.css']
+      })
+    )
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('critical2', function() {
+  return gulp
+    .src('dist/*.html')
+    .pipe(
+      critical({
+        base: 'dist/',
+        inline: true,
+        css: ['dist/css/main.css']
+      })
+    )
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('bundle-sw', () => {
