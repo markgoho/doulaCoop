@@ -1,3 +1,11 @@
+let WebFont: any;
+
+WebFont.load({
+  google: {
+    families: ['Libre Baskerville', 'Libre Franklin']
+  }
+});
+
 const navMenu = document.querySelectorAll('.desktop-nav--top-level');
 const mobileNavTop = document.querySelectorAll('.mobile-nav--link');
 const mobileNav = document.querySelector('.mobile-nav');
@@ -59,7 +67,7 @@ showMenuBtn.addEventListener('click', () => {
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/sw-test/sw.js', { scope: '/sw-test/' })
+    .register('sw.js')
     .then(function(reg) {
       // registration worked
       console.log('Registration succeeded. Scope is ' + reg.scope);

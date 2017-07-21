@@ -19,6 +19,7 @@
     "pug": "^2.0.0-rc.2",
     "pump": "^1.0.2",
     "typescript": "^2.4.1",
+    "webfontloader": "^1.6.28",
     "workbox-build": "^1.1.0"
   }
 }
