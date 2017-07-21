@@ -1,10 +1,10 @@
-let WebFont: any;
+// let WebFont: any;
 
-WebFont.load({
-  google: {
-    families: ['Libre Baskerville', 'Libre Franklin']
-  }
-});
+// WebFont.load({
+//   google: {
+//     families: ['Libre Baskerville', 'Libre Franklin']
+//   }
+// });
 
 const navMenu = document.querySelectorAll('.desktop-nav--top-level');
 const mobileNavTop = document.querySelectorAll('.mobile-nav--link');

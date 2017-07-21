@@ -123,19 +123,7 @@ gulp.task('critical', function() {
       critical({
         base: 'dist/',
         inline: true,
-        css: ['dist/css/main.css']
-      })
-    )
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('critical2', function() {
-  return gulp
-    .src('dist/*.html')
-    .pipe(
-      critical({
-        base: 'dist/',
-        inline: true,
+        minify: true,
         css: ['dist/css/main.css']
       })
     )
@@ -147,8 +135,7 @@ gulp.task('bundle-sw', () => {
     .generateSW({
       globDirectory: './dist/',
       swDest: './dist/sw.js',
-      globPatterns: ['**/*.{html,js,css,wbp,jpg,png,svg}'],
-      globIgnores: ['admin.html']
+      globPatterns: ['**/*.{html,js,css,wbp,jpg,png,svg,woff2}']
     })
     .then(() => {
       console.log('Service worker generated.');
