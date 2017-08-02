@@ -135,7 +135,7 @@ gulp.task('bundle-sw', () => {
     .generateSW({
       globDirectory: './dist/',
       swDest: './dist/sw.js',
-      globPatterns: ['**/*.{html,js,css,wbp,jpg,png,svg}'],
+      globPatterns: ['**/*.{html,js,css,wbp,jpg,png,svg,woff2}'],
       globIgnores: ['admin.html']
     })
     .then(() => {
