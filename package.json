@@ -1,6 +1,11 @@
 {
   "name": "doula-coop",
   "version": "1.0.0",
+  "scripts": {
+    "build": "gulp deploy && gulp bundle-sw && gulp critical",
+    "serve": "gulp deploy && gulp bundle-sw && gulp critical && firebase serve",
+    "deploy": "gulp deploy && gulp bundle-sw && gulp critical && firebase deploy"
+  },
   "main": "index.js",
   "author": "Mark Goho",
   "license": "MIT",
