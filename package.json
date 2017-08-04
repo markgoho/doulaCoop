@@ -23,9 +23,9 @@
     "gulp-uglify": "^3.0.0",
     "imagemin": "^5.3.1",
     "imagemin-webp": "^4.0.0",
-    "pug": "^2.0.0-rc.2",
     "pump": "^1.0.2",
     "typescript": "^2.4.1",
     "workbox-build": "^1.1.0"
-  }
+  },
+  "dependencies": {}
 }
