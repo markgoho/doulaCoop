@@ -8,6 +8,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.get('/members-only', (request, response) => {
+  response.set('Cache-Control', 'public, max-age=300, s-maxage=600');
   response.render(`members-only`, { title: 'monthly-meetings' });
 });
 
