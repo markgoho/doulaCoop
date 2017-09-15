@@ -17,4 +17,4 @@ app.get('/members-only', (request, response) => {
   response.render(`members-only`, { title: 'monthly-meetings' });
 });
 
-exports.app = functions.https.onRequest(app);
+//exports.app = functions.https.onRequest(app);
