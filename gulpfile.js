@@ -10,6 +10,8 @@ const maps = require('gulp-sourcemaps');
 const autoprefix = require('gulp-autoprefixer');
 const del = require('del');
 const pug = require('gulp-pug');
+const wbBuild = require('workbox-build');
+const critical = require('critical').stream;
 const browserSync = require('browser-sync').create();
 
 const reload = browserSync.reload;
@@ -30,6 +32,20 @@ gulp.task('minifyScripts', function() {
     .pipe(uglify())
     .pipe(rename('index.js'))
     .pipe(gulp.dest('src/js'));
+});
+
+gulp.task('critical', function() {
+  return gulp
+    .src('dist/*.html')
+    .pipe(
+      critical({
+        base: 'dist/',
+        minify: true,
+        inline: true,
+        css: ['dist/css/main.css']
+      })
+    )
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('compileSass', function() {
@@ -70,7 +86,8 @@ gulp.task(
           'src/*.html',
           'src/js/index.js',
           'src/img/**',
-          'src/fonts/**'
+          'src/fonts/**',
+          'src/manifest.json'
         ],
         {
           base: './src'
@@ -111,6 +128,22 @@ gulp.task('pug', function() {
       })
     )
     .pipe(gulp.dest('src'));
+});
+
+gulp.task('bundle-sw', () => {
+  return wbBuild
+    .generateSW({
+      globDirectory: './dist/',
+      swDest: './dist/sw.js',
+      globPatterns: ['**/*.{html,js,css,webp,jpg,png,svg,woff2}'],
+      globIgnores: ['admin.html']
+    })
+    .then(() => {
+      console.log('Service worker generated.');
+    })
+    .catch(err => {
+      console.log('[ERROR] This happened: ' + err);
+    });
 });
 
 gulp.task('default', ['deploy']);
