@@ -1,7 +1,10 @@
 {
   "hosting": {
     "public": "dist",
-    "rewrites": [{ "source": "/members-only", "function": "app" }],
+    // "rewrites": [
+    //   { "source": "/members-only", "function": "app" },
+    //   { "source": "/", "function": "app" }
+    // ],
     "headers": [
       {
         "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
