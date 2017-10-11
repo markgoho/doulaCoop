@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp = require('gulp');
-const pump = require('pump');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
@@ -68,7 +67,10 @@ gulp.task('compressSass', function() {
 });
 
 gulp.task('pugCompressed', function() {
-  return gulp.src('src/templates/*.pug').pipe(pug()).pipe(gulp.dest('src'));
+  return gulp
+    .src('src/templates/*.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('src'));
 });
 
 gulp.task('clean', function() {
@@ -135,7 +137,7 @@ gulp.task('bundle-sw', () => {
     .generateSW({
       globDirectory: './dist/',
       swDest: './dist/sw.js',
-      globPatterns: ['**/*.{html,js,css,wbp,jpg,png,svg,woff2}'],
+      globPatterns: ['**/*.{html,js,css,webp,jpg,png,svg,woff2}'],
       globIgnores: ['admin.html']
     })
     .then(() => {
