@@ -12,6 +12,7 @@ const pug = require('gulp-pug');
 const wbBuild = require('workbox-build');
 const critical = require('critical').stream;
 const browserSync = require('browser-sync').create();
+const pump = require('pump');
 
 const reload = browserSync.reload;
 
@@ -58,22 +59,23 @@ gulp.task('compileSass', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('compressSass', function() {
-  return gulp
-    .src('src/stylesheets/main.scss')
-    .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(autoprefix())
-    .pipe(gulp.dest('src/css'));
+gulp.task('compressSass', function(cb) {
+  pump(
+    [
+      gulp.src('src/stylesheets/main.scss'),
+      sass({ outputStyle: 'compressed' }),
+      autoprefix(),
+      gulp.dest('src/css')
+    ],
+    cb
+  );
 });
 
-gulp.task('pugCompressed', function() {
-  return gulp
-    .src('src/templates/*.pug')
-    .pipe(pug())
-    .pipe(gulp.dest('src'));
+gulp.task('pugCompressed', function(cb) {
+  pump([gulp.src('src/templates/*.pug'), pug(), gulp.dest('src')], cb);
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', function(cb) {
   return del(['dist', 'src/css/main.css*', 'src/js/app*.js*']);
 });
 
@@ -121,15 +123,19 @@ gulp.task('serve', ['compileSass', 'pug'], function() {
   gulp.watch('*.html').on('change', reload);
 });
 
-gulp.task('pug', function() {
-  return gulp
-    .src('./src/templates/*.pug')
-    .pipe(
+gulp.task('pug', function(cb) {
+  pump(
+    [
+      gulp.src('./src/templates/*.pug'),
+
       pug({
         pretty: true
-      })
-    )
-    .pipe(gulp.dest('src'));
+      }),
+
+      gulp.dest('src')
+    ],
+    cb
+  );
 });
 
 gulp.task('bundle-sw', () => {
