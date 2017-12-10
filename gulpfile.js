@@ -91,7 +91,7 @@ gulp.task(
           'src/js/index.js',
           'src/img/**',
           'src/fonts/**',
-          'src/manifest.json'
+          'src/manifest.webmanifest'
         ],
         {
           base: './src'

@@ -64,7 +64,7 @@
           },
           {
             "key": "Content-Type",
-            "value": "text/javascript"
+            "value": "text/javascript; charset=utf-8"
           }
         ]
       },
@@ -90,7 +90,7 @@
           },
           {
             "key": "Content-Type",
-            "value": "application/manifest+json"
+            "value": "application/manifest+json; charset=utf-8"
           }
         ]
       }
