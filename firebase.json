@@ -1,10 +1,6 @@
 {
   "hosting": {
     "public": "dist",
-    // "rewrites": [
-    //   { "source": "/members-only", "function": "app" },
-    //   { "source": "/", "function": "app" }
-    // ],
     "headers": [
       {
         "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
@@ -21,6 +17,19 @@
           {
             "key": "Cache-Control",
             "value": "max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "**/*.ico",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          },
+          {
+            "key": "Content-Type",
+            "value": "image/x-icon"
           }
         ]
       },
@@ -43,11 +52,45 @@
         ]
       },
       {
-        "source": "**/*.@(js|css)",
+        "source": "**/*.js",
         "headers": [
           {
             "key": "Cache-Control",
             "value": "max-age=604800"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Content-Type",
+            "value": "text/javascript"
+          }
+        ]
+      },
+      {
+        "source": "**/*.css",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          }
+        ]
+      },
+      {
+        "source": "**/*.webmanifest",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/manifest+json"
           }
         ]
       }
