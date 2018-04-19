@@ -15,3 +15,9 @@
  2. Ensure any new profiles have a corresponding jpg and webp file in src/img/headshots (the filename needs to match the name key of the partial). Photos must be 200p wide by 280p tall (see: the-doulas.pug)
  3. Stop your server, then build and serve: `yarn serve`
  
+ ## Deploy
+ WARNING: Don't do this. Make sure your changes are set and the rest of the site is functional.
+
+ ```
+ $ yarn deploy
+ ```
