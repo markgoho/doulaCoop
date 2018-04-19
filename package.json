@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gulp deploy && gulp bundle-sw && gulp critical",
     "serve": "gulp deploy && gulp bundle-sw && gulp critical && firebase serve",
-    "deploy": "gulp deploy && gulp bundle-sw && gulp critical && firebase deploy"
+    "deploy": "gulp deploy && gulp bundle-sw && gulp critical && firebase deploy",
+    "tools": "npm i -g yarn firebase-tools"
   },
   "main": "index.js",
   "author": "Mark Goho",
