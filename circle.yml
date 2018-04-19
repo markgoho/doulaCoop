@@ -1,3 +1,9 @@
 machine:
   node:
     version: 9.3.0
+
+deployment:
+  release:
+    branch: development
+    commands:
+      - echo 'Yup, ready to deploy here!!'
