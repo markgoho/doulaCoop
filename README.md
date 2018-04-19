@@ -2,6 +2,8 @@
  
  Site: https://www.doulacooperative.org
 
+ Build: [![CircleCI](https://circleci.com/gh/markgoho/doulaCoop.svg?style=svg)](https://circleci.com/gh/markgoho/doulaCoop)
+
  ## Getting Started
  ```
  $ npm run tools
