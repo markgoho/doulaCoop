@@ -29,7 +29,7 @@ const reload = browserSync.reload;
 // Deploy tasks
 gulp.task('minifyScripts', function() {
   return gulp
-    .src('src/index.js')
+    .src('src/js/index.js')
     .pipe(uglify())
     .pipe(rename('index.js'))
     .pipe(gulp.dest('build/js'));
