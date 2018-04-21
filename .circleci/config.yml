@@ -23,6 +23,7 @@ jobs:
           at: "."
       - run: yarn global add firebase-tools
       - run: ls -la
+      - run: firebase deploy --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
