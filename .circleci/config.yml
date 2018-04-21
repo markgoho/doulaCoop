@@ -10,9 +10,10 @@ jobs:
       - persist_to_workspace:
           root: "."
           paths:
-            - "dist/"
-            - ".firebaserc"
-            - "firebase.json"
+            - dist/
+            - .firebaserc
+            - firebase.json
+            - functions/
   deploy:
     machine:
       enabled: true
@@ -20,7 +21,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "."
-      - run: ls dist/
+      - run: yarn global add firebase-tools
       - run: ls -la
 
 workflows:
