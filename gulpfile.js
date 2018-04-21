@@ -11,7 +11,8 @@ const del = require('del');
 const pug = require('gulp-pug');
 const wbBuild = require('workbox-build');
 const critical = require('critical').stream;
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync');
+const spa = require("browser-sync-spa");
 const pump = require('pump');
 
 const reload = browserSync.reload;
@@ -124,11 +125,21 @@ gulp.task('watchPug', function() {
 });
 
 gulp.task('serve', ['copy', 'compileSass', 'pug', 'minifyScripts'], function() {
-  browserSync.init({
-    server: {
-      baseDir: './build'
+  browserSync.use(spa({
+    // Options to pass to connect-history-api-fallback.
+    // If your application already provides fallback urls (such as an existing proxy server),
+    // this value can be set to false to omit using the connect-history-api-fallback middleware entirely.
+    history: {
+        index: '/index.html'
     }
+  }));
+
+  browserSync({
+    open: false,
+    server: 'build',
+    files: "build/*"
   });
+  
   gulp.watch('src/stylesheets/**/*.scss', ['compileSass']);
   gulp.watch('src/index.js', ['watchJS']);
   gulp.watch('src/templates/*.pug', ['pug']);
