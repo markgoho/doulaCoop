@@ -3,6 +3,26 @@ jobs:
   build:
     docker:
       - image: circleci/node:9
+    working_directory: ~/environment
     steps:
       - checkout
       - run: yarn install && yarn build
+  deploy:
+    machine:
+        enabled: true
+    working_directory: ~/environment
+    steps:
+      - checkout
+      - run: ls dist/
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          # filters:
+          #   branches:
+          #     only: sequential-branch-filter
