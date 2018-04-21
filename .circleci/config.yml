@@ -7,18 +7,18 @@ jobs:
     steps:
       - checkout
       - run: yarn install && yarn build
-    persist_to_workspace:
-      root: "."
-      paths:
-        - "dist/"
-        - ".firebaserc"
-        - "firebase.json"
+    # persist_to_workspace:
+    #   root: "."
+    #   paths:
+    #     - "dist/"
+    #     - ".firebaserc"
+    #     - "firebase.json"
   deploy:
     machine:
       enabled: true
     working_directory: ~/environment
-    - attach_workspace:
-        at: "."
+    # - attach_workspace:
+    #     at: "."
     steps:
       - checkout
       - run: ls dist/
