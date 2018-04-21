@@ -2,12 +2,8 @@
 # https://github.com/github/platform-samples/blob/master/pre-receive-hooks/block_unknown_pushers.sh
 
 
-
-#!/usr/bin/env bash
-
 #
-# Pre-receive hook that will block any new commits that contain files ending
-# with .gz, .zip or .tgz
+# Pre-receive hook that will block any new commits that contain files related to build configuration
 #
 # More details on pre-receive hooks and how to apply them can be found on
 # https://help.github.com/enterprise/admin/guides/developer-workflow/managing-pre-receive-hooks-on-the-github-enterprise-appliance/
