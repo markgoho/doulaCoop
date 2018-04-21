@@ -28,10 +28,10 @@ const reload = browserSync.reload;
 // Deploy tasks
 gulp.task('minifyScripts', function() {
   return gulp
-    .src('src/js/index.js')
+    .src('src/index.js')
     .pipe(uglify())
     .pipe(rename('index.js'))
-    .pipe(gulp.dest('src/js'));
+    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('critical', function() {
@@ -55,7 +55,7 @@ gulp.task('compileSass', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefix())
     .pipe(maps.write('./'))
-    .pipe(gulp.dest('src/css'))
+    .pipe(gulp.dest('build/css'))
     .pipe(browserSync.stream());
 });
 
@@ -65,44 +65,56 @@ gulp.task('compressSass', function(cb) {
       gulp.src('src/stylesheets/main.scss'),
       sass({ outputStyle: 'compressed' }),
       autoprefix(),
-      gulp.dest('src/css')
+      gulp.dest('build/css')
     ],
     cb
   );
 });
 
 gulp.task('pugCompressed', function(cb) {
-  pump([gulp.src('src/templates/*.pug'), pug(), gulp.dest('src')], cb);
+  pump([gulp.src('src/templates/*.pug'), pug(), gulp.dest('build')], cb);
 });
 
 gulp.task('clean', function(cb) {
-  return del(['dist', 'src/css/main.css*', 'src/js/app*.js*']);
+  return del(['dist', 'build']);
 });
 
 gulp.task(
   'deploy',
-  ['clean', 'compressSass', 'pugCompressed', 'minifyScripts'],
+  ['clean', 'copy', 'compressSass', 'pugCompressed', 'minifyScripts'],
   function() {
     return gulp
       .src(
         [
-          'src/css/main.css',
-          'src/*.html',
-          'src/js/index.js',
-          'src/img/**',
-          'src/fonts/**',
-          'src/manifest.webmanifest'
+          'build/css/main.css',
+          'build/*.html',
+          'build/js/index.js',
+          'build/img/**',
+          'build/fonts/**',
+          'build/manifest.webmanifest'
         ],
         {
-          base: './src'
+          base: './build'
         }
       )
       .pipe(gulp.dest('dist'));
   }
 );
 
+gulp.task('copy', function() {
+  return gulp.src([
+    'src/fonts/**',
+    'src/img/**',
+    'src/manifest.webmanifest'
+  ],
+  {
+    base: './src'
+  }).pipe(gulp.dest('build'))
+})
+
 // Watch tasks
 gulp.task('watchJS', function(done) {
+
   reload();
   done();
 });
@@ -111,16 +123,16 @@ gulp.task('watchPug', function() {
   gulp.watch('src/templates/*.pug', ['pug']);
 });
 
-gulp.task('serve', ['compileSass', 'pug'], function() {
+gulp.task('serve', ['copy', 'compileSass', 'pug', 'minifyScripts'], function() {
   browserSync.init({
     server: {
-      baseDir: './src'
+      baseDir: './build'
     }
   });
-  gulp.watch('stylesheets/**/*.scss', ['compileSass']);
-  gulp.watch('js/index.js', ['watchJS']);
+  gulp.watch('src/stylesheets/**/*.scss', ['compileSass']);
+  gulp.watch('src/index.js', ['watchJS']);
   gulp.watch('src/templates/*.pug', ['pug']);
-  gulp.watch('*.html').on('change', reload);
+  gulp.watch('build/*.html').on('change', reload);
 });
 
 gulp.task('pug', function(cb) {
@@ -132,7 +144,7 @@ gulp.task('pug', function(cb) {
         pretty: true
       }),
 
-      gulp.dest('src')
+      gulp.dest('build')
     ],
     cb
   );
