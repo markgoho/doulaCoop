@@ -8,7 +8,7 @@
     "tools": "npm i -g yarn firebase-tools",
     "test": "npm run build"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "Mark Goho",
   "license": "MIT",
   "devDependencies": {
