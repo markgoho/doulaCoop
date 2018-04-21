@@ -7,13 +7,22 @@ jobs:
     steps:
       - checkout
       - run: yarn install && yarn build
+    persist_to_workspace:
+      root: .
+      paths:
+        - dist/
+        - .firebaserc
+        - firebase.json
   deploy:
     machine:
-        enabled: true
+      enabled: true
     working_directory: ~/environment
+    - attach_workspace:
+        at: .
     steps:
       - checkout
       - run: ls dist/
+      - run: ls -la
 
 workflows:
   version: 2
