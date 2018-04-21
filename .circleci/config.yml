@@ -26,6 +26,7 @@ jobs:
           at: "."
       - run: yarn add firebase-tools
       - run: ls -la
+      - run: cd functions && yarn
       - run: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
 
 workflows:
