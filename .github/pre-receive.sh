@@ -10,7 +10,7 @@
 #
 
 case $GITHUB_USER_LOGIN in
-  markgoho|ultimadj) echo "User $GITHUB_USER_LOGIN is allowed to push";;
+  markgoho) echo "User $GITHUB_USER_LOGIN is allowed to push";;
   *) echo "User $GITHUB_USER_LOGIN is not in the list of authorized pushers"
      exit 1;;
 esac
