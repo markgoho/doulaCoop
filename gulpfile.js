@@ -114,8 +114,7 @@ gulp.task('copy', function() {
 })
 
 // Watch tasks
-gulp.task('watchJS', function(done) {
-
+gulp.task('watchJS', ['minifyScripts'], function(done) {
   reload();
   done();
 });
