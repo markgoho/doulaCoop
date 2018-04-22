@@ -1,0 +1,42 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:9
+    working_directory: ~/environment
+    steps:
+      - checkout
+      - run: yarn install && yarn build
+      - persist_to_workspace:
+          root: "."
+          paths:
+            - dist/
+            - .firebaserc
+            - firebase.json
+            - functions/
+            - node_modules/
+            - package.json
+            - yarn.lock
+  deploy:
+    docker:
+      - image: circleci/node:9
+    working_directory: ~/environment
+    steps:
+      - attach_workspace:
+          at: "."
+      - run: yarn add firebase-tools
+      - run: ls -la
+      - run: cd functions && yarn
+      - run: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: development

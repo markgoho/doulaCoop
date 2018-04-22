@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gulp deploy && gulp bundle-sw && gulp critical",
     "serve": "gulp deploy && gulp bundle-sw && gulp critical && firebase serve",
-    "deploy": "gulp deploy && gulp bundle-sw && gulp critical && firebase deploy",
+    "deploy": "gulp deploy && gulp bundle-sw && gulp critical && yarn functions && firebase deploy",
+    "functions": "(cd functions && yarn install)",
     "tools": "npm i -g yarn firebase-tools",
     "test": "npm run build"
   },
